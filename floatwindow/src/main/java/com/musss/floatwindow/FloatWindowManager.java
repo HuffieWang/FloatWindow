@@ -39,4 +39,6 @@ public class FloatWindowManager {
         ContextCompat.startForegroundService(activity, intent);
     }
 
+
+
 }

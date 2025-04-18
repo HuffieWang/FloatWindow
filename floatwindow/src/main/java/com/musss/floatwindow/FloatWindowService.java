@@ -77,6 +77,11 @@ public class FloatWindowService extends ExpandableBubbleService {
         inflate.setOnClickListener(v -> {
             entity.onClick();
         });
+        entity.setListener(() -> {
+            msgText.post(() -> {
+                msgText.setText(entity.getTitle());
+            });
+        });
         inflate.setOnTouchListener((v, event) -> {
             if(event.getAction() == MotionEvent.ACTION_DOWN){
                 inflate.setAlpha(0.6f);

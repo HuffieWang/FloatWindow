@@ -6,6 +6,8 @@ public abstract class FloatWindowEntity {
 
     private String title;
 
+    private FloatWindowListener listener;
+
     public FloatWindowEntity() {
     }
 
@@ -19,5 +21,16 @@ public abstract class FloatWindowEntity {
 
     public void setTitle(String title) {
         this.title = title;
+        if(listener != null){
+            listener.onNotifyDataChange();
+        }
+    }
+
+    public FloatWindowListener getListener() {
+        return listener;
+    }
+
+    public void setListener(FloatWindowListener listener) {
+        this.listener = listener;
     }
 }

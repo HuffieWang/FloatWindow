@@ -5,9 +5,45 @@
     android:orientation="vertical"
     android:background="#00AAFF">
 
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart1"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart2"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart3"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart4"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart5"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        />
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart6"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:visibility="gone"
+        />
     <LinearLayout
         android:id="@+id/layoutContainer"
-        android:layout_width="160dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         />

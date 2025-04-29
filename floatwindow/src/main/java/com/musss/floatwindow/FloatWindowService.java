@@ -17,6 +17,7 @@ import com.torrydo.floatingbubbleview.service.expandable.ExpandedBubbleBuilder;
 public class FloatWindowService extends ExpandableBubbleService {
 
 
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -28,8 +29,33 @@ public class FloatWindowService extends ExpandableBubbleService {
     public BubbleBuilder configBubble() {
         View expandedView = LayoutInflater.from(this).inflate(R.layout.layout_float_window, null);
         LinearLayout linearLayout = expandedView.findViewById(R.id.layoutContainer);
+        int chartCount = 0;
         for(FloatWindowEntity entity : FloatWindowManager.getInstance().getData()){
-            linearLayout.addView(createItemView(entity));
+            if(entity.getTitle() != null){
+                linearLayout.addView(createItemView(entity));
+            } else {
+                chartCount++;
+                switch (chartCount){
+                    case 1:
+                        new FloatWindowChart(expandedView.findViewById(R.id.lineChart1), entity);
+                        break;
+                    case 2:
+                        new FloatWindowChart(expandedView.findViewById(R.id.lineChart2), entity);
+                        break;
+                    case 3:
+                        new FloatWindowChart(expandedView.findViewById(R.id.lineChart3), entity);
+                        break;
+                    case 4:
+                        new FloatWindowChart(expandedView.findViewById(R.id.lineChart4), entity);
+                        break;
+                    case 5:
+                        new FloatWindowChart(expandedView.findViewById(R.id.lineChart5), entity);
+                        break;
+                    case 6:
+                        new FloatWindowChart(expandedView.findViewById(R.id.lineChart6), entity);
+                        break;
+                }
+            }
         }
         linearLayout.addView(createItemView(new FloatWindowEntity("退出") {
             @Override
@@ -37,6 +63,7 @@ public class FloatWindowService extends ExpandableBubbleService {
                 stopSelf();
             }
         }));
+
         return new BubbleBuilder(this)
                 .bubbleView(expandedView)
                 .bubbleDraggable(true)
@@ -92,6 +119,5 @@ public class FloatWindowService extends ExpandableBubbleService {
         });
         return inflate;
     }
-
 }
 
